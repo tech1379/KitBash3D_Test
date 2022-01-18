@@ -72,7 +72,7 @@ namespace TakeHomeTest
                     }
                 }
                 int EntityCount = Entity.Count -1;
-                if (!char.IsUpper(Entity[EntityCount], 0) && Entity[EntityCount][1] != '<')
+                if (Entity[EntityCount][1] != '<')
                 {
                     Entity[EntityCount] = Entity[EntityCount] + ":";
                 }
