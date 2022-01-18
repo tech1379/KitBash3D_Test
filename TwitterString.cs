@@ -58,12 +58,25 @@ namespace TakeHomeTest
                 
                 for (int i = 0; i < Entity.Count; i++)
                 {
-                    if (char.IsUpper(Entity[i], 0))
+                    if (char.IsUpper(Entity[i], 0) && i != Entity.Count-1)
                     {
                         Entity[i] = " <strong>" + Entity[i] + "</strong> ";
                     }
+                    else if (char.IsUpper(Entity[i], 0) && i == Entity.Count-1)
+                    {
+                        Entity[i] = " <strong>" + Entity[i] + ":</strong> ";
+                    }
+                    else
+                    {
+                        Entity[i] = " " + Entity[i];
+                    }
                 }
-                Link = ": <a href=\"" + Link + "\">" + Link + "</a>";
+                int EntityCount = Entity.Count -1;
+                if (!char.IsUpper(Entity[EntityCount], 0) && Entity[EntityCount][1] != '<')
+                {
+                    Entity[EntityCount] = Entity[EntityCount] + ":";
+                }
+                Link = " <a href=\"" + Link + "\">" + Link + "</a>";
                 UserName = " @<a href=\"http://twitter.com/" + UserName + "\">" + UserName + "</a>";
 
                 for (int i = 0; i < Entity.Count; i++)
