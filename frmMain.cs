@@ -81,5 +81,10 @@ namespace TakeHomeTest
             StringBuilder html3 = twitter3.convertToHtml();
             twitter3.PrintReport(html3);
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

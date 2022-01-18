@@ -55,7 +55,11 @@ namespace TakeHomeTest
             StringBuilder html = new StringBuilder();
             try
             {
-                
+                if (Entity[0] == "")
+                {
+                    MessageBox.Show("No Entity data.");
+                    return html.Append("Error not correct format.");
+                }
                 for (int i = 0; i < Entity.Count; i++)
                 {
                     if (char.IsUpper(Entity[i], 0) && i != Entity.Count-1)
